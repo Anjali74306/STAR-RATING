@@ -1,0 +1,115 @@
+:root {
+    --body-bg: #080b1a;
+    /* bacground color */
+    --txt-color: #f1f1f1;
+    /* txt color */
+    --star-color: #d4d4d4;
+    /* star color */
+    --yellow: #e7c819;   
+    /* rating star color */
+    
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 6rem;
+    background-color: var(--body-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--txt-color);
+    
+    
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 10px;
+    box-shadow: 4px 5px 4px 3px rgb(32, 218, 209) ;
+    -webkit-box-shadow: 3px 10px 24px 4px rgba(24,184,163,0.48);
+    -moz-box-shadow: 3px 10px 24px 4px rgba(24,184,163,0.48);
+    box-shadow: 3px 10px 24px 4px rgba(24,184,163,0.48);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+h1{
+    color: gold;
+    font-size: 50px;
+    box-shadow: 1px 2px 1px 2px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating-label {
+    margin-right: 2rem;
+}
+.rating-label:hover{
+    color: aqua;
+}
+
+.rating-star {
+    position: relative;
+    display: flex;
+    margin: 10px 0;
+    flex-direction: row-reverse;
+    
+}
+
+.rating-star input {
+    position: relative;
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    appearance: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.rating-star input::before {
+    content: '\eeb8';
+    position: absolute;
+    font-family: boxicons;
+    font-size: 34px;
+    position: absolute;
+    left: 4px;
+    color: var(--star-color);
+    transition: all .3s;
+}
+
+.rating-star input:nth-child(2n + 1)::before {
+    right: 4px;
+    left: initial;
+}
+
+.rating-star input:hover ~ input::before,
+.rating-star input:hover::before,
+.rating-star input:checked ~ input::before,
+.rating-star input:checked::before {
+    color: var(--yellow);
+}
+
+
